@@ -1,5 +1,5 @@
-from people import People
-from matter import Matter
+from src.models.people import People
+from src.models.matter import Matter
 class Rating:
 
     ###

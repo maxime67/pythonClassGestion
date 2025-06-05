@@ -1,17 +1,16 @@
 from typing import List
+from xmlrpc.client import DateTime
 
-from src.models.rating import Rating
 from src.models.classroom import Classroom
 
 class People:
     ###
     # Construct
     ###
-    def __init__(self, classroom: Classroom, name: str, age: int, ratings: List[Rating] = None):
+    def __init__(self, classroom: Classroom, name: str, birthDate: DateTime):
         self.classroom = classroom
         self.name: str = name
-        self.age: int = age
-        self.ratings: List[Rating] = ratings
+        self.birthDate: DateTime = birthDate
 
     ###
     # GETTER
@@ -20,27 +19,23 @@ class People:
         return self.name
     def getClassroom(self):
         return self.classroom
-    def getAge(self):
-        return self.age
-    def getRatings(self):
-        return self.ratings
+    def getBirthDate(self):
+        return self.birthDate
 
     ###
     # SETTER
     ###
     def setClassroom(self, classroom: Classroom):
         self.classroom = classroom
-    def setAge(self, age):
-        self.age = age
+    def setBirthDate(self, DateTime):
+        self.DateTime = DateTime
     def setName(self, name):
         self.name = name
-    def addRating(self, rating):
-        self.ratings.append(rating)
 
     ###
     # ToString
     ###
     def __str__(self):
-        return str(self.name) + " " + str(self.classroom) + " " + str(self.age) + " " + str(self.ratings)
+        return str(self.name) + " " + str(self.classroom) + " " + str(self.birthDate)
 
 
